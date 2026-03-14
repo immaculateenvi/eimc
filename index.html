@@ -2,274 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EIMC | Digital Creative Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Envilinks Interconnectivity Media Concept | EIMC</title>
     <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@700;800&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Floating DevLab Toggle -->
-    <button class="floating-devlab" id="floatingDevlab">
-        <i class="fas fa-sliders-h"></i>
-    </button>
-
-    <!-- DevLab Sidebar -->
-    <div class="devlab-sidebar" id="devlabSidebar">
-        <div class="devlab-header">
-            <h3><i class="fas fa-palette"></i> Design Studio</h3>
-            <button class="close-devlabs" id="closeDevlab">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <div class="devlab-tabs">
-            <button class="tab-btn active" data-tab="colors">
-                <i class="fas fa-fill-drip"></i> Colors
-            </button>
-            <button class="tab-btn" data-tab="fonts">
-                <i class="fas fa-font"></i> Fonts
-            </button>
-            <button class="tab-btn" data-tab="layout">
-                <i class="fas fa-th-large"></i> Layout
-            </button>
-            <button class="tab-btn" data-tab="codelabs">
-                <i class="fas fa-code"></i> Code Lab
-            </button>
-        </div>
-
-        <div class="devlab-content">
-            <!-- Colors Tab -->
-            <div class="tab-content active" id="colorsTab">
-                <h4>Color Theme</h4>
-                <div class="color-presets">
-                    <button class="color-preset" data-theme="default" style="background: linear-gradient(135deg, #4a6cf7, #6c5ce7);">
-                        <span>Default</span>
-                    </button>
-                    <button class="color-preset" data-theme="dark" style="background: linear-gradient(135deg, #2d3436, #636e72);">
-                        <span>Dark</span>
-                    </button>
-                    <button class="color-preset" data-theme="blue" style="background: linear-gradient(135deg, #0984e3, #00cec9);">
-                        <span>Ocean</span>
-                    </button>
-                    <button class="color-preset" data-theme="purple" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);">
-                        <span>Purple</span>
-                    </button>
-                    <button class="color-preset" data-theme="green" style="background: linear-gradient(135deg, #00b894, #00cec9);">
-                        <span>Green</span>
-                    </button>
-                    <button class="color-preset" data-theme="red" style="background: linear-gradient(135deg, #e17055, #fdcb6e);">
-                        <span>Sunset</span>
-                    </button>
-                </div>
-
-                <h4>Custom Colors</h4>
-                <div class="color-picker">
-                    <div class="color-input">
-                        <label>Primary</label>
-                        <input type="color" id="primaryColor" value="#4a6cf7">
-                    </div>
-                    <div class="color-input">
-                        <label>Secondary</label>
-                        <input type="color" id="secondaryColor" value="#6c5ce7">
-                    </div>
-                    <div class="color-input">
-                        <label>Background</label>
-                        <input type="color" id="bgColor" value="#ffffff">
-                    </div>
-                </div>
-
-                <div class="devlab-actions">
-                    <button id="resetColors" class="btn-small">
-                        <i class="fas fa-redo"></i> Reset
-                    </button>
-                    <button id="saveTheme" class="btn-small btn-primary">
-                        <i class="fas fa-save"></i> Save
-                    </button>
-                </div>
-            </div>
-
-            <!-- Fonts Tab -->
-            <div class="tab-content" id="fontsTab">
-                <h4>Typography</h4>
-                <div class="font-control">
-                    <label>Heading Font</label>
-                    <select id="headingFont">
-                        <option value="Poppins">Poppins</option>
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="Inter">Inter</option>
-                        <option value="Arial">Arial</option>
-                    </select>
-                </div>
-                
-                <div class="font-control">
-                    <label>Body Font</label>
-                    <select id="bodyFont">
-                        <option value="Inter">Inter</option>
-                        <option value="Poppins">Poppins</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Georgia">Georgia</option>
-                    </select>
-                </div>
-
-                <div class="font-control">
-                    <label>Font Size</label>
-                    <div class="range-group">
-                        <input type="range" id="fontSize" min="14" max="20" value="16">
-                        <span id="fontValue">16px</span>
-                    </div>
-                </div>
-
-                <div class="font-preview">
-                    <h5 style="font-family: var(--font-heading);">Heading Preview</h5>
-                    <p style="font-family: var(--font-body);">This is how body text will look with your settings.</p>
-                </div>
-            </div>
-
-            <!-- Layout Tab -->
-            <div class="tab-content" id="layoutTab">
-                <h4>Layout Settings</h4>
-                
-                <div class="layout-control">
-                    <label>Portfolio Layout</label>
-                    <select id="layoutType">
-                        <option value="grid">Grid</option>
-                        <option value="masonry">Masonry</option>
-                        <option value="list">List</option>
-                    </select>
-                </div>
-
-                <div class="layout-control">
-                    <label>Columns (Desktop)</label>
-                    <div class="column-buttons">
-                        <button class="col-btn active" data-cols="2">2</button>
-                        <button class="col-btn" data-cols="3">3</button>
-                        <button class="col-btn" data-cols="4">4</button>
-                    </div>
-                </div>
-
-                <div class="layout-control">
-                    <label>Card Style</label>
-                    <div class="style-buttons">
-                        <button class="style-btn active" data-style="normal">Normal</button>
-                        <button class="style-btn" data-style="minimal">Minimal</button>
-                        <button class="style-btn" data-style="bold">Bold</button>
-                    </div>
-                </div>
-
-                <div class="layout-control">
-                    <label>Animation</label>
-                    <select id="animationType">
-                        <option value="normal">Normal</option>
-                        <option value="fast">Fast</option>
-                        <option value="slow">Slow</option>
-                        <option value="none">None</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Code Lab Tab -->
-            <div class="tab-content" id="codelabsTab">
-                <h4>Code Playground</h4>
-                
-                <div class="code-templates">
-                    <h5>Quick Templates</h5>
-                    <button class="template-btn" data-template="button">
-                        <i class="fas fa-square"></i> Button
-                    </button>
-                    <button class="template-btn" data-template="card">
-                        <i class="fas fa-id-card"></i> Card
-                    </button>
-                    <button class="template-btn" data-template="navbar">
-                        <i class="fas fa-bars"></i> Navbar
-                    </button>
-                </div>
-
-                <div class="code-editor">
-                    <h5>Live Editor</h5>
-                    <div class="editor-tabs">
-                        <button class="editor-tab active" data-editor="html">HTML</button>
-                        <button class="editor-tab" data-editor="css">CSS</button>
-                    </div>
-                    
-                    <textarea id="htmlEditor" class="editor active" placeholder="Write HTML here...">
-<div class="custom-card">
-    <h3>Your Component</h3>
-    <p>Edit this code to create something amazing!</p>
-    <button class="custom-btn">Try It</button>
-</div></textarea>
-                    
-                    <textarea id="cssEditor" class="editor" placeholder="Write CSS here...">
-.custom-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 300px;
-    margin: 1rem;
-}
-
-.custom-btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    margin-top: 1rem;
-    cursor: pointer;
-}</textarea>
-
-                    <button id="runCode" class="btn-run">
-                        <i class="fas fa-play"></i> Run Code
-                    </button>
-                </div>
-
-                <div class="code-output">
-                    <h5>Preview</h5>
-                    <div id="codePreview"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation -->
+    <!-- Navigation - Completely Fixed -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
                 <a href="#home" class="logo">
-                    <img src="logo.jpg" alt="EIMC Logo">
+                    <img src="logo.jpg" alt="EIMC Logo" loading="lazy" onerror="this.src='https://via.placeholder.com/40x40/1a3b5d/ffffff?text=E'">
                     <div class="logo-text">
                         <h1>EIMC</h1>
-                        <p class="tagline">Primus Inter Cetera</p>
+                        <p class="tagline">Envilinks Interconnectivity Media Concept</p>
                     </div>
                 </a>
 
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
 
                 <div class="nav-links" id="navLinks">
                     <a href="#home" class="nav-link active">
-                        <i class="fas fa-home"></i> Home
+                        <i class="fas fa-home"></i> <span>Home</span>
                     </a>
                     <a href="#services" class="nav-link">
-                        <i class="fas fa-cogs"></i> Services
+                        <i class="fas fa-cogs"></i> <span>Services</span>
                     </a>
                     <a href="#portfolio" class="nav-link">
-                        <i class="fas fa-briefcase"></i> Portfolio
+                        <i class="fas fa-briefcase"></i> <span>Portfolio</span>
                     </a>
-                    <a href="#name-art" class="nav-link">
-                        <i class="fas fa-paint-brush"></i> Name Art
-                    </a>
-                    <a href="#calculator" class="nav-link">
-                        <i class="fas fa-calculator"></i> Calculator
-                    </a>
+                    
+                    <!-- Dropdown for Tools - Fixed -->
+                    <div class="dropdown">
+                        <button class="nav-link dropdown-toggle" id="themeDropdown">
+                            <i class="fas fa-tools"></i> <span>Tools</span> <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <i class="fas fa-palette"></i> Theme Lab
+                            </div>
+                            <a href="#theme-lab" class="dropdown-item">
+                                <i class="fas fa-paint-brush"></i> Theme Customizer
+                            </a>
+                            
+                            <div class="dropdown-header">
+                                <i class="fas fa-code"></i> Development
+                            </div>
+                            <a href="#code-lab" class="dropdown-item">
+                                <i class="fas fa-laptop-code"></i> Code Lab
+                            </a>
+                            
+                            <div class="dropdown-header">
+                                <i class="fas fa-paint-brush"></i> Creative
+                            </div>
+                            <a href="#name-art" class="dropdown-item">
+                                <i class="fas fa-font"></i> Name Art Generator
+                            </a>
+                            
+                            <div class="dropdown-header">
+                                <i class="fas fa-calculator"></i> Tools
+                            </div>
+                            <a href="#calculator" class="dropdown-item">
+                                <i class="fas fa-calculator"></i> Project Calculator
+                            </a>
+                            
+                            <div class="dropdown-divider"></div>
+                            
+                            <div class="dropdown-header">
+                                <i class="fas fa-palette"></i> Quick Themes
+                            </div>
+                            <div class="theme-presets-dropdown">
+                                <button class="theme-preset" data-theme="default">
+                                    <span class="preset-color" style="background: #1a3b5d;"></span>
+                                    <span>Patriot</span>
+                                </button>
+                                <button class="theme-preset" data-theme="dark">
+                                    <span class="preset-color" style="background: #2d3436;"></span>
+                                    <span>Dark</span>
+                                </button>
+                                <button class="theme-preset" data-theme="ocean">
+                                    <span class="preset-color" style="background: #0984e3;"></span>
+                                    <span>Ocean</span>
+                                </button>
+                                <button class="theme-preset" data-theme="sunset">
+                                    <span class="preset-color" style="background: #e17055;"></span>
+                                    <span>Sunset</span>
+                                </button>
+                                <button class="theme-preset" data-theme="purple">
+                                    <span class="preset-color" style="background: #6c5ce7;"></span>
+                                    <span>Purple</span>
+                                </button>
+                                <button class="theme-preset" data-theme="green">
+                                    <span class="preset-color" style="background: #00b894;"></span>
+                                    <span>Green</span>
+                                </button>
+                            </div>
+                            
+                            <div class="dropdown-divider"></div>
+                            
+                            <button class="dropdown-item" id="openDevlab">
+                                <i class="fas fa-flask"></i> Open DevLab
+                                <span class="dropdown-shortcut">Ctrl+D</span>
+                            </button>
+                            
+                            <div class="dropdown-divider"></div>
+                            
+                            <button class="dropdown-item" id="resetAllSettings">
+                                <i class="fas fa-undo-alt"></i> Reset All Settings
+                                <span class="dropdown-shortcut">Ctrl+R</span>
+                            </button>
+                        </div>
+                    </div>
+                    
                     <a href="#contact" class="nav-link">
-                        <i class="fas fa-phone"></i> Contact
+                        <i class="fas fa-phone"></i> <span>Contact</span>
                     </a>
                 </div>
             </div>
@@ -281,7 +135,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Creative Digital Solutions</h1>
+                    <h1 class="hero-title">Envilinks Interconnectivity <span class="stellar-gold">Media Concept</span></h1>
                     <p class="hero-subtitle">Professional graphics design, web development & internet services with 3+ years of excellence</p>
                     
                     <div class="hero-stats">
@@ -311,7 +165,7 @@
 
                 <div class="hero-image">
                     <div class="image-placeholder">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
                 </div>
             </div>
@@ -408,7 +262,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-grid grid" id="portfolioGrid">
                 <!-- Projects will be loaded here dynamically -->
                 <div class="loading">
                     <i class="fas fa-spinner fa-spin"></i>
@@ -423,6 +277,337 @@
                 <button id="loadMoreBtn" class="btn btn-load-more">
                     <i class="fas fa-plus"></i> Load More
                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Lab Section -->
+    <section class="theme-lab" id="theme-lab">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Theme Laboratory</h2>
+                <p class="section-subtitle">Customize the look and feel of your experience</p>
+            </div>
+
+            <div class="theme-lab-container">
+                <!-- Theme Presets -->
+                <div class="theme-presets-panel">
+                    <h3><i class="fas fa-magic"></i> Quick Theme Presets</h3>
+                    <div class="preset-grid">
+                        <div class="theme-card" data-theme="default">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #1a3b5d, #2c4c6e);"></div>
+                            <div class="theme-info">
+                                <h4>Patriot Blue</h4>
+                                <p>Professional & trustworthy</p>
+                            </div>
+                        </div>
+                        <div class="theme-card" data-theme="dark">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #2d3436, #636e72);"></div>
+                            <div class="theme-info">
+                                <h4>Dark Mode</h4>
+                                <p>Easy on the eyes</p>
+                            </div>
+                        </div>
+                        <div class="theme-card" data-theme="ocean">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #0984e3, #00cec9);"></div>
+                            <div class="theme-info">
+                                <h4>Ocean Blue</h4>
+                                <p>Fresh & calming</p>
+                            </div>
+                        </div>
+                        <div class="theme-card" data-theme="sunset">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #e17055, #fdcb6e);"></div>
+                            <div class="theme-info">
+                                <h4>Sunset</h4>
+                                <p>Warm & energetic</p>
+                            </div>
+                        </div>
+                        <div class="theme-card" data-theme="purple">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);"></div>
+                            <div class="theme-info">
+                                <h4>Royal Purple</h4>
+                                <p>Creative & luxurious</p>
+                            </div>
+                        </div>
+                        <div class="theme-card" data-theme="green">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #00b894, #00cec9);"></div>
+                            <div class="theme-info">
+                                <h4>Emerald</h4>
+                                <p>Natural & balanced</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Customization -->
+                <div class="theme-custom-panel">
+                    <h3><i class="fas fa-sliders-h"></i> Custom Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <label>Primary</label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="primaryColor" value="#1a3b5d">
+                                <span class="color-hex">#1a3b5d</span>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <label>Secondary</label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="secondaryColor" value="#2c4c6e">
+                                <span class="color-hex">#2c4c6e</span>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <label>Accent</label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="accentColor" value="#d32f2f">
+                                <span class="color-hex">#d32f2f</span>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <label>Gold</label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="goldColor" value="#c6a43f">
+                                <span class="color-hex">#c6a43f</span>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <label>Background</label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="bgColor" value="#f5f7fa">
+                                <span class="color-hex">#f5f7fa</span>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <label>Card BG</label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="cardBgColor" value="#ffffff">
+                                <span class="color-hex">#ffffff</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typography Controls -->
+                    <div class="typography-panel">
+                        <h4><i class="fas fa-font"></i> Typography</h4>
+                        <div class="font-controls">
+                            <div class="font-item">
+                                <label>Heading Font</label>
+                                <select id="headingFont" class="font-select">
+                                    <option value="Poppins" selected>Poppins</option>
+                                    <option value="Montserrat">Montserrat</option>
+                                    <option value="Inter">Inter</option>
+                                    <option value="Roboto">Roboto</option>
+                                    <option value="Open Sans">Open Sans</option>
+                                </select>
+                            </div>
+                            <div class="font-item">
+                                <label>Body Font</label>
+                                <select id="bodyFont" class="font-select">
+                                    <option value="Inter" selected>Inter</option>
+                                    <option value="Poppins">Poppins</option>
+                                    <option value="Roboto">Roboto</option>
+                                    <option value="Open Sans">Open Sans</option>
+                                    <option value="Lato">Lato</option>
+                                </select>
+                            </div>
+                            <div class="font-item">
+                                <label>Font Size (px)</label>
+                                <div class="range-wrapper">
+                                    <input type="range" id="fontSize" min="12" max="20" value="16" step="1">
+                                    <span id="fontValue">16px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Theme Actions -->
+                    <div class="theme-actions">
+                        <button id="applyThemeBtn" class="btn btn-primary">
+                            <i class="fas fa-check"></i> Apply Changes
+                        </button>
+                        <button id="resetThemeBtn" class="btn btn-secondary">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                        <button id="saveThemeBtn" class="btn btn-save">
+                            <i class="fas fa-save"></i> Save Theme
+                        </button>
+                    </div>
+
+                    <!-- Live Preview -->
+                    <div class="theme-preview-box">
+                        <h4><i class="fas fa-eye"></i> Live Preview</h4>
+                        <div class="preview-card">
+                            <div class="preview-header">
+                                <h5>Sample Card</h5>
+                            </div>
+                            <div class="preview-body">
+                                <p>This is how your theme will look on cards and text elements.</p>
+                                <button class="preview-button">Sample Button</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Lab Section -->
+    <section class="code-lab" id="code-lab">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Code Laboratory</h2>
+                <p class="section-subtitle">Write, edit, and run HTML, CSS, and JavaScript in real-time</p>
+            </div>
+
+            <div class="code-lab-container">
+                <!-- Templates Panel -->
+                <div class="code-templates-panel">
+                    <h3><i class="fas fa-template"></i> Quick Templates</h3>
+                    <div class="template-grid">
+                        <button class="template-card template-btn" data-template="button">
+                            <i class="fas fa-square"></i>
+                            <span>Button</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="card">
+                            <i class="fas fa-id-card"></i>
+                            <span>Card</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="navbar">
+                            <i class="fas fa-bars"></i>
+                            <span>Navbar</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="form">
+                            <i class="fas fa-wpforms"></i>
+                            <span>Form</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="grid">
+                            <i class="fas fa-th"></i>
+                            <span>Grid</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="modal">
+                            <i class="fas fa-window-maximize"></i>
+                            <span>Modal</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="animation">
+                            <i class="fas fa-play"></i>
+                            <span>Animation</span>
+                        </button>
+                        <button class="template-card template-btn" data-template="flex">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Flexbox</span>
+                        </button>
+                    </div>
+                    <p class="template-note"><i class="fas fa-info-circle"></i> Select a template to start, then edit the code below</p>
+                </div>
+
+                <!-- Code Editor Panel -->
+                <div class="code-editor-panel">
+                    <!-- Editor Tabs -->
+                    <div class="editor-tabs">
+                        <button class="editor-tab active" data-editor="html">
+                            <i class="fab fa-html5"></i> HTML
+                        </button>
+                        <button class="editor-tab" data-editor="css">
+                            <i class="fab fa-css3-alt"></i> CSS
+                        </button>
+                        <button class="editor-tab" data-editor="js">
+                            <i class="fab fa-js"></i> JavaScript
+                        </button>
+                    </div>
+
+                    <!-- Code Editors -->
+                    <div class="editors-container">
+                        <textarea id="htmlEditor" class="code-editor active" placeholder="<!-- Write your HTML here -->" spellcheck="false"><div class="demo-card">
+    <h3>Welcome to Code Lab</h3>
+    <p>Edit this code to see real-time changes!</p>
+    <button class="demo-btn" onclick="alert('Hello from EIMC!')">Click Me</button>
+</div></textarea>
+                        
+                        <textarea id="cssEditor" class="code-editor" placeholder="/* Write your CSS here */" spellcheck="false">.demo-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #e1e5e9;
+}
+
+.demo-card h3 {
+    color: #1a3b5d;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.demo-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.demo-btn {
+    background: #1a3b5d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.demo-btn:hover {
+    background: #2c4c6e;
+    transform: translateY(-2px);
+}</textarea>
+
+                        <textarea id="jsEditor" class="code-editor" placeholder="// Write your JavaScript here" spellcheck="false">// Interactive JavaScript example
+document.querySelectorAll('.demo-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+            alert('Button clicked!');
+        }, 200);
+    });
+});</textarea>
+                    </div>
+
+                    <!-- Editor Controls -->
+                    <div class="editor-controls">
+                        <button id="runCodeBtn" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Run Code
+                        </button>
+                        <button id="clearCodeBtn" class="btn btn-secondary">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                        <button id="copyCodeBtn" class="btn btn-secondary">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button id="downloadCodeBtn" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+
+                    <!-- Preview Area -->
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h4><i class="fas fa-eye"></i> Live Preview</h4>
+                            <div class="preview-controls">
+                                <button id="refreshPreview" class="btn-icon" title="Refresh Preview">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button id="fullscreenPreview" class="btn-icon" title="Fullscreen">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="preview-frame" id="codePreview">
+                            <!-- Preview will be injected here -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -448,16 +633,28 @@
                         <h4>Select Style</h4>
                         <div class="style-options">
                             <button class="style-option active" data-style="gradient">
-                                <div class="style-preview" style="background: linear-gradient(135deg, #4a6cf7, #6c5ce7);"></div>
+                                <div class="style-preview" style="background: linear-gradient(135deg, #1a3b5d, #c6a43f);"></div>
                                 <span>Gradient</span>
                             </button>
                             <button class="style-option" data-style="modern">
-                                <div class="style-preview" style="background: linear-gradient(45deg, #333 25%, #666 25%, #666 50%, #333 50%);"></div>
+                                <div class="style-preview" style="background: linear-gradient(45deg, #1a3b5d 25%, #d32f2f 25%, #d32f2f 50%, #1a3b5d 50%);"></div>
                                 <span>Modern</span>
                             </button>
                             <button class="style-option" data-style="elegant">
-                                <div class="style-preview" style="background: radial-gradient(circle, #4a6cf7, #6c5ce7);"></div>
+                                <div class="style-preview" style="background: radial-gradient(circle, #c6a43f, #1a3b5d);"></div>
                                 <span>Elegant</span>
+                            </button>
+                            <button class="style-option" data-style="neon">
+                                <div class="style-preview" style="background: linear-gradient(135deg, #d32f2f, #c6a43f);"></div>
+                                <span>Neon</span>
+                            </button>
+                            <button class="style-option" data-style="3d">
+                                <div class="style-preview" style="background: #1a3b5d; box-shadow: 5px 5px 0 #c6a43f;"></div>
+                                <span>3D</span>
+                            </button>
+                            <button class="style-option" data-style="outline">
+                                <div class="style-preview" style="background: transparent; border: 3px solid #1a3b5d;"></div>
+                                <span>Outline</span>
                             </button>
                         </div>
                     </div>
@@ -497,6 +694,18 @@
             </div>
 
             <div class="calculator-box">
+                <!-- Currency Selector -->
+                <div class="currency-selector">
+                    <div class="form-group">
+                        <label><i class="fas fa-dollar-sign"></i> Display Currency</label>
+                        <select id="currencySelector" class="form-input">
+                            <option value="NGN" selected>🇳🇬 Nigerian Naira (₦)</option>
+                            <option value="USD">🇺🇸 US Dollar ($)</option>
+                            <option value="EUR">🇪🇺 Euro (€)</option>
+                        </select>
+                    </div>
+                </div>
+                
                 <div class="calc-form">
                     <div class="form-grid">
                         <div class="form-group">
@@ -626,19 +835,19 @@
                 <div class="social-section">
                     <h3>Connect With Us</h3>
                     <div class="social-buttons">
-                        <a href="https://wa.me/+2348142442012" class="social-btn whatsapp">
+                        <a href="https://wa.me/+2348142442012" class="social-btn whatsapp" target="_blank" rel="noopener">
                             <i class="fab fa-whatsapp"></i>
                             WhatsApp
                         </a>
-                        <a href="https://facebook.com/Immaculateenvilinks" class="social-btn facebook">
+                        <a href="https://facebook.com/Immaculateenvilinks" class="social-btn facebook" target="_blank" rel="noopener">
                             <i class="fab fa-facebook-f"></i>
                             Facebook
                         </a>
-                        <a href="https://linkedin.com" class="social-btn linkedin">
+                        <a href="https://www.linkedin.com/company/envilinks-interconnectivity-media-concept" class="social-btn linkedin" target="_blank" rel="noopener">
                             <i class="fab fa-linkedin-in"></i>
                             LinkedIn
                         </a>
-                        <a href="https://instagram.com" class="social-btn instagram">
+                        <a href="https://www.instagram.com/envilinks" class="social-btn instagram" target="_blank" rel="noopener">
                             <i class="fab fa-instagram"></i>
                             Instagram
                         </a>
@@ -654,10 +863,10 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="logo.jpg" alt="EIMC Logo">
+                        <img src="logo.jpg" alt="EIMC Logo" loading="lazy" onerror="this.src='https://via.placeholder.com/50x50/1a3b5d/ffffff?text=E'">
                     </div>
                     <div class="footer-info">
-                        <h2>EIMC</h2>
+                        <h2>Envilinks Interconnectivity <span class="stellar-gold">Media Concept</span></h2>
                         <p class="motto">Primus Inter Cetera</p>
                         <p>Professional digital solutions since 2022</p>
                     </div>
@@ -673,6 +882,14 @@
                     </div>
 
                     <div class="link-group">
+                        <h3>Explore</h3>
+                        <a href="#theme-lab">Theme Lab</a>
+                        <a href="#code-lab">Code Lab</a>
+                        <a href="#name-art">Name Art</a>
+                        <a href="#calculator">Calculator</a>
+                    </div>
+
+                    <div class="link-group">
                         <h3>Quick Links</h3>
                         <a href="#home">Home</a>
                         <a href="#services">Services</a>
@@ -683,12 +900,43 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> EIMC. All rights reserved.</p>
-                <p class="motto">Primus Inter Cetera</p>
+                <p>&copy; <span id="currentYear"></span> Envilinks Interconnectivity Media Concept. All rights reserved.</p>
+                <p class="motto stellar-gold">Primus Inter Cetera</p>
             </div>
         </div>
     </footer>
 
+    <!-- DevLab Sidebar -->
+    <div class="devlab-sidebar" id="devlabSidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-flask"></i> DevLab</h3>
+            <button id="closeDevlab" class="btn-icon" aria-label="Close DevLab">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-tabs">
+                <button class="sidebar-tab active" data-tab="html">HTML</button>
+                <button class="sidebar-tab" data-tab="css">CSS</button>
+                <button class="sidebar-tab" data-tab="js">JS</button>
+            </div>
+            <div class="sidebar-panels">
+                <div class="sidebar-panel active" id="htmlPanel">
+                    <textarea placeholder="HTML Code..."></textarea>
+                </div>
+                <div class="sidebar-panel" id="cssPanel">
+                    <textarea placeholder="CSS Code..."></textarea>
+                </div>
+                <div class="sidebar-panel" id="jsPanel">
+                    <textarea placeholder="JavaScript Code..."></textarea>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="runCodeSidebar">Run Code</button>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
